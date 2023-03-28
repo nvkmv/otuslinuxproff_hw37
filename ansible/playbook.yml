@@ -1,0 +1,21 @@
+---
+- name: homework37
+  hosts: all
+  become: true
+  pre_tasks:
+    - name: set Time_zone
+      timezone:
+        name: Europe/Moscow
+
+- name: knock-server
+  hosts: server
+  become: true
+  roles:
+    - knock-server
+
+- name: knock-client
+  hosts: client
+  become: true
+  roles:
+    - knock-client
+    

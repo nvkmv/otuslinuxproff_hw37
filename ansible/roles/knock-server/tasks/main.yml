@@ -1,0 +1,8 @@
+---
+- name: install knock-server, iptables-persistens
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  with_items: 
+    - knock-server
+    - iptables

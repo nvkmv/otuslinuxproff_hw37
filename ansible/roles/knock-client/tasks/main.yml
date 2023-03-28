@@ -1,0 +1,5 @@
+---
+- name: install knock
+  dnf:
+    name: knock
+    state: latest
