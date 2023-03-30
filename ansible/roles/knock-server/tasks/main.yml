@@ -1,8 +1,37 @@
 ---
-- name: install knock-server, iptables-persistens
+- name: install knock-server, update iptables
   dnf:
     name: "{{ item }}"
     state: latest
   with_items: 
     - knock-server
-    - iptables
+    - iptables-services
+    - iptables-utils
+
+- name: template iptables rules
+  template:
+    src: templates/iptables
+    dest: /etc/sysconfig/iptables
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: template config
+  template:
+    src: templates/knockd.conf
+    dest: /etc/knockd.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+
+- name: start knock-server
+  systemd:
+   name: "{{ item }}"
+   enabled: yes
+   state: started
+  with_items: 
+    - iptables.service
+    - knockd.service
+    
+  
