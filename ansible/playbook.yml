@@ -18,4 +18,5 @@
   become: true
   roles:
     - knock-client
+    - nginx
     
