@@ -8,13 +8,13 @@
         name: Europe/Moscow
 
 - name: knock-server
-  hosts: server
+  hosts: router
   become: true
   roles:
     - knock-server
 
 - name: knock-client
-  hosts: client
+  hosts: server
   become: true
   roles:
     - knock-client
