@@ -12,6 +12,14 @@
       group: root
       mode: '0644'
 
+- name: template test page
+  template: 
+      src: templates/index.html
+      dest: /usr/share/testpage/index.html
+      owner: root
+      group: root
+      mode: '0644'
+
 - name: start nginx
   systemd:
     name: nginx

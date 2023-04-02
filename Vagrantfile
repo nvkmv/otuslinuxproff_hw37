@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "server" do |server|
     server.vm.box = "nvkmv/rockylinux9"
     server.vm.host_name = "server"
-    server.vm.network "public_network", ip: "192.168.1.50"
+    server.vm.network "private_network", ip: "192.168.56.11"
   end
 
   config.vm.synced_folder "./data/", "/home/vagrant/data"
