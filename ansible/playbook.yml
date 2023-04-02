@@ -17,6 +17,7 @@
   hosts: server
   become: true
   roles:
+    - iproute
     - knock-client
     - nginx
     

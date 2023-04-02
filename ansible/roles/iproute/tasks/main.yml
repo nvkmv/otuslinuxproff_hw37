@@ -1,0 +1,4 @@
+---
+- name: add default ip route from router-machine
+  shell:
+    cmd: ip route add default via 192.168.56.10 dev eth1 onlink
