@@ -24,7 +24,14 @@
     group: root
     mode: '0644'
 
-
+- name: on forwarding in netfilter system
+  sysctl: 
+    name: net.ipv4.ip_forward
+    value: "1"
+    sysctl_set: true
+    state: present
+    reload: true
+    
 - name: start knock-server
   systemd:
    name: "{{ item }}"
