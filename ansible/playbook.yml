@@ -7,13 +7,13 @@
       timezone:
         name: Europe/Moscow
 
-- name: knock-server
+- name: config router machine
   hosts: router
   become: true
   roles:
-    - knock-server
+    - config_router
 
-- name: knock-client
+- name: config server machine
   hosts: server
   become: true
   roles:
