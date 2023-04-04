@@ -17,6 +17,6 @@ Vagrant.configure("2") do |config|
     server.vm.network "private_network", ip: "192.168.56.11"
   end
 
-  config.vm.synced_folder "./data/", "/home/vagrant/data"
+ # config.vm.synced_folder "./data/", "/home/vagrant/data"
 end
 
